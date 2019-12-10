@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+  int i,n,res=0;
+  scanf("%d",&n);
+  int ar[n];
+  for(i=0;i<n;i++)
+  {
+    scanf("%d",&ar[i]);
+    res=res^ar[i];
+  }
+  printf("Lonely no. is %d",res);
+  return 0;
+ }
