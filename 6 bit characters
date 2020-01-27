@@ -51,15 +51,15 @@ int main()
     {
         result[j++]=char_arr[str[i]>>2];
         result[j++]=char_arr[(str[i]<<6)>>2];
-        result[j++]='*';
-        result[j++]='*';
+        result[j++]='=';
+        result[j++]='=';
     }
     if(chk==2)
     {
         result[j++]=char_arr[str[i]>>2];
         result[j++]=char_arr[((str[i]<<6)>>2)||(str[i+1]>>4)];
         result[j++]=char_arr[(str[i+1]<<4)>>2];
-        result[j++]='*';
+        result[j++]='=';
     }
     for(i=0;i<j;i++)
     {
