@@ -43,22 +43,22 @@ int main()
     for(i=0;i<chk_len;i+=3)
     {
         result[j++]=char_arr[str[i]>>2];
-        result[j++]=char_arr[((str[i]<<6)>>2)||(str[i+1]>>4)];
-        result[j++]=char_arr[((str[i+1]<<4)>>2)||(str[i+2]>>6)];
-        result[j++]=char_arr[(str[i+2]<<2)>>2];
+        result[j++]=char_arr[((str[i]&0x03)<<4)|((str[i+1]&0xF0)>>4)];
+        result[j++]=char_arr[((str[i+1]&0x0F)<<2)|((str[i+2]&0xC0)>>6)];
+        result[j++]=char_arr[((str[i+2]&0xFC)>>2)];
     }
     if(chk==1)
     {
         result[j++]=char_arr[str[i]>>2];
-        result[j++]=char_arr[(str[i]<<6)>>2];
+        result[j++]=char_arr[((str[i]&0x03)<<4)];
         result[j++]='=';
         result[j++]='=';
     }
     if(chk==2)
     {
         result[j++]=char_arr[str[i]>>2];
-        result[j++]=char_arr[((str[i]<<6)>>2)||(str[i+1]>>4)];
-        result[j++]=char_arr[(str[i+1]<<4)>>2];
+        result[j++]=char_arr[((str[i]&0x03)<<4)|((str[i+1]&0xF0)>>4)];
+        result[j++]=char_arr[((str[i+1]&0x0F)<<2)];
         result[j++]='=';
     }
     for(i=0;i<j;i++)
